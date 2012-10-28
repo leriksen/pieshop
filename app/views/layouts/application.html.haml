@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %title Ootm
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    #container
+      #header
+        %h2 out of the mouth.
+        %ul.navlinks
+          %li.first link 1
+          %li.last link 2
+      #sidebar
+        %h2 this is your sidebar
+        %ul
+          %li Offsite link 1
+          %li Offsite link 2
+          %li Offsite link 3
+          %li Offsite link 4
+      #content
+        %h2 the content is yielded from here
+        = yield
+      #footer
+        %h2 this is your footer
+        %ul.footlinks
+          %li local link 1
+          %li local link 2
+          %li local link 3
+          %li local link 4
