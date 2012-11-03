@@ -68,7 +68,6 @@ ul.navlinks {
 #content {
 	@include column(18, true);
 	background-color: #0C703C;
-
 }
 
 div {
@@ -79,4 +78,36 @@ div {
 #footer ul {
 	@include horizontal-list;
 	padding:10px
+}
+
+.field {
+	@include column(18, true);
+}
+
+.field label {
+	@include column(2);
+	padding: 10px;
+}
+
+.field input {
+	@include column(4, true);
+	margin-top: 10px;
+}
+
+.fieldWithErrors {
+	padding: 2px;
+	background-color: red;
+}
+
+.fieldWithErrors input {
+	@include column(4, last);
+	background-color: red;
+}
+
+#error_explanation {
+	margin-left: 10px;
+}
+
+.actions {
+	padding: 10px;
 }

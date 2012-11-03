@@ -34,4 +34,9 @@ Bookshop::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.action_view.field_error_proc = Proc.new {|html_tag, instance|
+      ActiveSupport::SafeBuffer.new('<span class="fieldWithErrors">' + html_tag + '</span>')
+  }
+
 end
