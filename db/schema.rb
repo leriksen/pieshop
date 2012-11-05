@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20121102202821) do
+=======
+ActiveRecord::Schema.define(:version => 20121105110008) do
+>>>>>>> master
 
   create_table "user_types", :force => true do |t|
     t.string   "typename"

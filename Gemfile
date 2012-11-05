@@ -42,6 +42,15 @@ gem 'thin'
 # To use debugger
 gem 'debugger'
 
+<<<<<<< HEAD
 group :test do
 	gem 'factory_girl_rails'
+=======
+group :development,:test do
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
+	gem 'rb-fsevent'
+	gem 'guard-rspec'
+	gem 'growl'
+>>>>>>> master
 end
