@@ -42,12 +42,14 @@ gem 'thin'
 # To use debugger
 gem 'debugger'
 
-group :development, :test do
+group :development do
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
 end
 
 group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 	gem 'rb-fsevent'
 	gem 'guard-rspec'
 	gem 'growl'
