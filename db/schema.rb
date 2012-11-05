@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102202821) do
+ActiveRecord::Schema.define(:version => 20121105215330) do
 
   create_table "user_types", :force => true do |t|
     t.string   "typename"
@@ -19,5 +19,15 @@ ActiveRecord::Schema.define(:version => 20121102202821) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.integer  "user_type_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "users", ["user_type_id"], :name => "index_users_on_user_type_id"
 
 end
