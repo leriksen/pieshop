@@ -24,7 +24,8 @@ describe UserTypesController do
   # UserType. As you add validations to UserType, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    # use factory_girl - centralise all spec model instantiation there
+    attributes_for(:user_type)
   end
 
   # This should return the minimal set of values that should be in the session
