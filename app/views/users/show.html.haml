@@ -5,8 +5,8 @@
   %b Email:
   = @user.email
 %p
-  %b User type:
-  = @user.user_type.typename
+  %b User Type:
+  = @user.user_type.typename if @user.user_type
 
 = link_to 'Edit', edit_user_path(@user)
 \|

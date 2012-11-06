@@ -4,8 +4,9 @@ describe "users/new" do
   before(:each) do
     assign(:user, stub_model(User,
       :email => "MyString",
-      :password_digest => "MyString",
-      :user_type => nil
+      :password => "MyString",
+      :password_confirmation => "MyString",
+      :user_type_id => 1
     ).as_new_record)
   end
 
@@ -15,8 +16,8 @@ describe "users/new" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => users_path, :method => "post" do
       assert_select "input#user_email", :name => "user[email]"
-      assert_select "input#user_password_digest", :name => "user[password_digest]"
-      assert_select "input#user_user_type", :name => "user[user_type]"
+      assert_select "input#user_password", :name => "user[password]"
+      assert_select "input#user_password_confirmation", :name => "user[password_confirmation]"
     end
   end
 end
