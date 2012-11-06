@@ -9,10 +9,11 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
 
 @import "compass/reset";
+
+@import "base";
 
 @import "blueprint";
 @import "compass/typography/lists/horizontal-list";
@@ -20,6 +21,8 @@
 @import "compass/typography/text/replacement";
 @import "compass/css3/border-radius";
 @import "compass/utilities/general/clearfix";
+@import "compass/utilities/general/float";
+@import "blueprint/debug";
 
 @include blueprint-typography;
 @include blueprint-debug;
@@ -34,7 +37,12 @@ body {
 
 #header, #footer {
 	@include column(24);
-	background-color: #2683AE;
+	// background-color: #2683AE;
+}
+#header, #footer, #sidebar {
+	h2 {
+		margin-left: 5px;
+	}
 }
 
 #header {
@@ -44,22 +52,24 @@ body {
 		width: 600px;
 		height: 160px;
 		float:left;
+		top: 1em;
+		right: 10px;
 	}
 	.navlinks {
 		@include horizontal-list;
 		position:absolute;
 		top: 1em;
-		right: 0px;
+		right: 10px;
 	}
 }
 
 ul.navlinks {
-	float:right;
+	@include float-right;
 }
 
 #sidebar {
 	@include column(6);
-	background-color: #0098DB;
+	// background-color: #0098DB;
 	ul {
 		@include no-bullets;
 	}
@@ -67,7 +77,11 @@ ul.navlinks {
 
 #content {
 	@include column(18, true);
-	background-color: #0C703C;
+	// background-color: #0C703C;
+	padding-bottom: 10px;
+	* {
+		padding: 5px;
+	}
 }
 
 div {
@@ -85,8 +99,22 @@ div {
 }
 
 .field label {
-	@include column(2);
+	@include column(3);
 	padding: 10px;
+	font-size: 1.1em;
+	margin-top: 10px;
+	// line-height: 200px; // center vertically
+}
+
+td {
+	font-size: 1.1em;
+}
+
+#content > a {
+	font-size: 1.2em;
+}
+.field select {
+	margin-top: 15px;
 }
 
 .field input {
@@ -110,4 +138,8 @@ div {
 
 .actions {
 	padding: 10px;
+}
+
+a {
+	&:visted { color: #CCF;}
 }

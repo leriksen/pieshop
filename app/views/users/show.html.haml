@@ -1,14 +1,12 @@
 %p#notice= notice
 
+%h2 User Listing
 %p
   %b Email:
   = @user.email
 %p
-  %b Password digest:
-  = @user.password_digest
-%p
   %b User type:
-  = @user.user_type
+  = @user.user_type.typename
 
 = link_to 'Edit', edit_user_path(@user)
 \|
