@@ -42,6 +42,8 @@ gem 'thin'
 # To use debugger
 gem 'debugger'
 
+gem 'validates_email_format_of'
+
 group :development do
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'

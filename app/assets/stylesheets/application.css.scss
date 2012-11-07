@@ -138,7 +138,11 @@ td {
 
 .actions {
 	padding: 10px;
+	input {
+			margin-top: 20px;
+	}
 }
+
 
 a {
 	&:visted { color: #CCF;}

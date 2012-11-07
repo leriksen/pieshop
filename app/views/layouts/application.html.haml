@@ -10,10 +10,14 @@
     #container
       #header
         %h2 Welcome to Booked Out.
-        %ul.navlinks
-          %li.first= link_to "Sign Up", new_user_path
-          or
-          %li.last= link_to "Log In", new_user_path
+        .navlinks
+          - if current_user
+            Signed in as #{current_user.email}
+            = link_to "Logout", logout_path
+          -else
+            = link_to "Sign Up", signup_path
+            or
+            = link_to "Log In", login_path
       #sidebar
         %ul
           %li Onsite link 1
