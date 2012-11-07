@@ -8,7 +8,11 @@ private
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-helper_method :current_user
+  def is_admin
+    current_user.user_type.admin? if current_user
+  end
+
+helper_method :current_user, :is_admin
 
   def require_login
     unless current_user

@@ -24,6 +24,9 @@
           %li Onsite link 2
           %li Onsite link 3
           %li Onsite link 4
+          - if is_admin
+            %li= link_to "Manage User Types", user_types_path
+            %li= link_to "Manage Users", users_path
       #content
         = yield
       #footer

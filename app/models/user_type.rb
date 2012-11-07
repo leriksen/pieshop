@@ -3,4 +3,8 @@ class UserType < ActiveRecord::Base
 
   validates_uniqueness_of :typename
   validates_presence_of :typename, :level
+
+  def admin?
+    typename == "admin"
+  end
 end
