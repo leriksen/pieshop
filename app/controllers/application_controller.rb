@@ -5,14 +5,22 @@ class ApplicationController < ActionController::Base
 
 private
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    begin
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    rescue ActiveRecord::RecordNotFound
+    end
+    @current_user
   end
 
   def is_admin
-    current_user.user_type.admin? if current_user
+    current_user.user_type.is_admin? if current_user
   end
 
-helper_method :current_user, :is_admin
+  def is_admin_or_user
+    session[:user_id] == params[:user_id] if (session[:user_id] && params[:user_id]) || current_user.user_type.is_admin? if current_user
+  end
+
+helper_method :current_user, :is_admin, :is_admin_or_user
 
   def require_login
     unless current_user

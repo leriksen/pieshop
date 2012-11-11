@@ -12,6 +12,11 @@ Bookshop::Application.routes.draw do
   
   get :signup, to: "users#new"       , as: :signup
   
+  get :about  , to: "pages#about"     , as: :about
+  get :legal  , to: "pages#legal"     , as: :legal
+  get :contact, to: "pages#contact"   , as: :contact
+  get :privacy, to: "pages#privacy"   , as: :privacy
+  
   match 'pages/:id' => 'pages#show'
 
   root :to => 'pages#home'
