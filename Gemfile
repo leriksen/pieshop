@@ -23,6 +23,10 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+
 end
 
 gem 'jquery-rails'
@@ -45,16 +49,7 @@ gem 'thin'
 # To use debugger
 gem 'debugger'
 
-gem 'validates_email_format_of'
-
-group :development do
-	gem 'rspec-rails'
-	gem 'factory_girl_rails'
-end
-
 group :test do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
 	gem 'rb-fsevent'
 	gem 'guard-rspec'
 	gem 'growl'

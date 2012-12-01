@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ApplicationController do
-  ActionController::Routing::Routes.draw do |map|
+  Bookshop::Application.routes do |map|
     get :current_user , to: "application#current_user", as: :current_user
   end
   
