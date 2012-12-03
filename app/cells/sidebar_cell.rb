@@ -13,6 +13,7 @@ private
     when "admin"
       add_link collection, "User Types",  user_types_path
       add_link collection, "Users",  users_path
+      
     end
   end
 

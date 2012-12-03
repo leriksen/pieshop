@@ -32,14 +32,14 @@ describe UserTypesController do
   # in order to pass any filters (e.g. authentication) defined in
   # UserTypesController. Be sure to keep this updated too.
   def valid_session
-    {}
+    {user_id: 1}
   end
 
   describe "GET index" do
     it "assigns all user_types as @user_types" do
       user_type = UserType.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:user_types).should eq([user_type])
+      assigns(:user_types).should include(user_type)
     end
   end
 
@@ -149,7 +149,7 @@ describe UserTypesController do
 
   describe "DELETE destroy" do
     it "destroys the requested user_type" do
-      user_type = UserType.create! valid_attributes
+      user_type = UserType.create! valid_attributes, valid_session
       expect {
         delete :destroy, {:id => user_type.to_param}, valid_session
       }.to change(UserType, :count).by(-1)

@@ -31,14 +31,14 @@ describe UsersController do
   # in order to pass any filters (e.g. authentication) defined in
   # UsersController. Be sure to keep this updated too.
   def valid_session
-    {}
+    {user_id: 1}
   end
 
   describe "GET index" do
     it "assigns all users as @users" do
       user = User.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:users).should eq([user])
+      assigns(:users).should include(user)
     end
   end
 
@@ -81,7 +81,7 @@ describe UsersController do
 
       it "redirects to the created user" do
         post :create, {:user => valid_attributes}, valid_session
-        response.should redirect_to(User.last)
+        response.should redirect_to(root_url)
       end
     end
 
@@ -148,7 +148,7 @@ describe UsersController do
 
   describe "DELETE destroy" do
     it "destroys the requested user" do
-      user = User.create! valid_attributes
+      user = User.create! valid_attributes, user_type_id: 1
       expect {
         delete :destroy, {:id => user.to_param}, valid_session
       }.to change(User, :count).by(-1)
