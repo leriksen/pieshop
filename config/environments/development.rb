@@ -39,4 +39,7 @@ Bookshop::Application.configure do
       ActiveSupport::SafeBuffer.new('<span class="fieldWithErrors">' + html_tag + '</span>')
   }
 
+  # load lib dir, and reload changes therein
+  ActiveSupport::Dependencies.autoload_paths << File::join( Rails.root, 'lib')
+  ActiveSupport::Dependencies.explicitly_unloadable_constants << 'Permissions'
 end

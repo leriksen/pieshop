@@ -56,6 +56,12 @@ body {
 		top: 1em;
 		right: 10px;
 	}
+	h3 {
+		float: left;
+		@include column(24);
+		@include push(4);
+		padding-left: 24px;
+	}
 	.navlinks {
 		@include horizontal-list;
 		position:absolute;

@@ -13,11 +13,11 @@ private
   end
 
   def is_admin
-    current_user.user_type.is_admin? if current_user
+    current_user.role.is_administrator? if current_user
   end
 
   def is_admin_or_user
-    session[:user_id] == params[:user_id] if (session[:user_id] && params[:user_id]) || current_user.user_type.is_admin? if current_user
+    session[:user_id] == params[:user_id] if (session[:user_id] && params[:user_id]) || current_user.role.is_administrator? if current_user
   end
 
 helper_method :current_user, :is_admin, :is_admin_or_user

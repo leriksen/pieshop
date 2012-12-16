@@ -7,13 +7,12 @@ class SidebarCell < Cell::Rails
   end
 
 private
-  def build_nav_from_role(collection, role)
-    return unless role
-    case role.user_type.typename
-    when "admin"
-      add_link collection, "User Types",  user_types_path
+  def build_nav_from_role(collection, user)
+    return unless user
+    puts "user is #{user.inspect}"
+    case user.role.role_name
+    when "administrator"
       add_link collection, "Users",  users_path
-      
     end
   end
 

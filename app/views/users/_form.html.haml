@@ -16,8 +16,8 @@
     = f.label "Confirmation"
     = f.password_field :password_confirmation
   .field
-    = f.fields_for :user_types do |builder|
-      = builder.label "User Type"
-      = f.collection_select :user_type_id, UserType.all, :id, :typename
+    = f.fields_for :user do |builder|
+      = builder.label "Role"
+      = f.select 'role', Permissions::ROLEMAP
   .actions
     = f.submit 'Save'
