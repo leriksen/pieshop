@@ -6,7 +6,7 @@ describe "users/new" do
       :email => "MyString",
       :password => "MyString",
       :password_confirmation => "MyString",
-      :user_type_id => 1
+      :role => :viewer
     ).as_new_record)
   end
 

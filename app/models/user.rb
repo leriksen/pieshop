@@ -10,14 +10,11 @@ class User < ActiveRecord::Base
 
   def role
     p = read_attribute(:role)
-    logger.debug "p is #{p}"
     Permissions.new(p)
   end
 
   def role=(role)
-    logger.debug "received role #{role}"
     p = Permissions.new(role)
     write_attribute(:role, p.to_i)
-    logger.debug "wrote #{p.inspect} as #{p.to_i}"
   end
 end

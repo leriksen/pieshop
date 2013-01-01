@@ -1,0 +1,31 @@
+is_#{level} is_#{level}?
+before_filter is_#{level}
+monotonically increasing permissiveness
+separate model - activemodel vs activerecord
+has_many roles :though user_types
+devise ?
+new auth levels - on create! call meta method creation 
+
+class Ability
+
+  include CanCan::Ability
+
+  def initialize(user)
+    can :read, :all
+
+
+  end
+end
+
+def action
+  if can? update :model
+    link_to :update_action, @model
+end
+
+def action
+  unauthorized! if cannot :action, @model
+end
+
+Controller < ApplicationController
+  load_and_authorize_resource
+end

@@ -6,7 +6,7 @@ describe "users/edit" do
       :email => "MyString",
       :password => "MyString",
       :password_confirmation => "MyString",
-      :user_type_id => nil
+      :role => :viewer
     ))
   end
 

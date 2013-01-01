@@ -3,6 +3,6 @@ FactoryGirl.define do
     sequence(:email) {|n| "user#{n}@example.com"}
     password "default"
     password_confirmation {|u| u.password}
-    user_type
+    role :viewer
   end
 end
