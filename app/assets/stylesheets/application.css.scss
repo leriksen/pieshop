@@ -1,13 +1,4 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
  *= require_self
  */
 
@@ -38,7 +29,6 @@ body {
 
 #header, #footer {
 	@include column(24);
-	// background-color: #2683AE;
 }
 #header, #footer, #sidebar {
 	h2 {
@@ -49,12 +39,15 @@ body {
 #header {
 	position: relative;
 	h2 {
-		@include replace-text("logo.png");
+		@include replace-text("meat_pie_logo_cropped.jpg");
+		@include column(6);
+		@include push(5);
+
 		width: 600px;
 		height: 160px;
 		float:left;
 		top: 1em;
-		right: 10px;
+		right: 59px;
 	}
 	h3 {
 		float: left;

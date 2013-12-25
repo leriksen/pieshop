@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Booked Out
+    %title The Mighty Pie Shop
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -9,8 +9,8 @@
   %body
     #container
       #header
-        %h2 Welcome to Booked Out.
-        %h3 Connecting Editors And Authors
+        %h2 Welcome to The Mighty Pie Shop.
+        %h3 Making awesome pies - since RSN.
         .navlinks
           - if current_user
             Signed in as #{current_user.email}
@@ -25,7 +25,6 @@
       #content
         - flash.each do |name,msg|
           = content_tag :div, msg, id: "flash_#{name}"
-        %br
         = yield
       #footer
         #footerbar
